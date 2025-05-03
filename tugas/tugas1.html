@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,9 @@
       margin: 0;
       padding: 0;
       background: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
       background-color: #006064;
@@ -18,6 +22,7 @@
     }
     main {
       padding: 20px;
+      flex: 1;
     }
     table, th, td {
       border: 1px solid black;
@@ -36,47 +41,74 @@
       height: auto;
       margin-top: 20px;
     }
+    a.back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 15px;
+      background-color: #004d40;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    a.back:hover {
+      background-color: #00695c;
+    }
+    footer {
+      background-color: #006064;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Tugas 1 - Penjadwalan Disk</h1>
     <p>M. Aldian Nurrahman | Universitas Perjuangan | Kelas 4F</p>
-  </header>  <main>
+  </header>
+
+  <main>
     <h2>Data:</h2>
     <ul>
       <li>Jumlah track: 2000</li>
       <li>Posisi awal head: 1234</li>
       <li>Urutan akses track: 1600, 1050, 1775, 1950, <strong>150</strong>, 825, 75, 1300, 1450, 600, <strong>700</strong>, 1600, 1050, 30, 1900, <strong>2004</strong>, 700, 1300, 55, 425, <strong>139</strong>, 700, 1600, 200</li>
-    </ul><h2>Contoh Perhitungan Algoritma PTPD</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Langkah</th>
-      <th>Track</th>
-      <th>Jarak</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>1600</td><td>366</td></tr>
-    <tr><td>2</td><td>1050</td><td>550</td></tr>
-    <!-- Tambahkan langkah berikutnya di sini -->
-  </tbody>
-</table>
+    </ul>
 
-<div class="grafik">
-  <h3>Grafik Perjalanan</h3>
-  <img src="../grafik_ptpd.png" alt="Grafik PTPD">
-</div>
+    <h2>Contoh Perhitungan Algoritma PTPD</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Langkah</th>
+          <th>Track</th>
+          <th>Jarak</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1600</td><td>366</td></tr>
+        <tr><td>2</td><td>1050</td><td>550</td></tr>
+        <!-- Tambahkan langkah berikutnya di sini -->
+      </tbody>
+    </table>
 
-<h2>Penjelasan</h2>
-<p>
-  Algoritma PTPD (FCFS) memproses permintaan berdasarkan urutan kedatangan. Ini sederhana tapi tidak efisien karena tidak mempertimbangkan jarak antar track. Dalam contoh ini, head bergerak cukup jauh ke berbagai track tanpa pola yang efisien, yang menyebabkan waktu akses lebih lama.
-</p>
-<p>
-  Alternatif algoritma seperti SSTF, SCAN, dan LOOK bisa digunakan untuk efisiensi yang lebih tinggi.
-</p>
+    <div class="grafik">
+      <h3>Grafik Perjalanan</h3>
+      <img src="../grafik_ptpd.png" alt="Grafik PTPD">
+    </div>
 
+    <h2>Penjelasan</h2>
+    <p>
+      Algoritma PTPD (FCFS) memproses permintaan berdasarkan urutan kedatangan. Ini sederhana tapi tidak efisien karena tidak mempertimbangkan jarak antar track. Dalam contoh ini, head bergerak cukup jauh ke berbagai track tanpa pola yang efisien, yang menyebabkan waktu akses lebih lama.
+    </p>
+    <p>
+      Alternatif algoritma seperti SSTF, SCAN, dan LOOK bisa digunakan untuk efisiensi yang lebih tinggi.
+    </p>
+
+    <a href="../index.html" class="back">Kembali ke Beranda</a>
   </main>
+
+  <footer>
+    &copy; 2025 M. Aldian Nurrahman - Universitas Perjuangan
+  </footer>
 </body>
 </html>
