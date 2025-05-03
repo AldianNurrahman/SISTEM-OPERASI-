@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #e0f2f1, #b2dfdb);
       color: #004d40;
       min-height: 100vh;
@@ -17,18 +17,19 @@
     header {
       background-color: #006064;
       color: white;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
+      border-bottom: 4px solid #004d40;
     }
     nav {
       background-color: #004d40;
-      padding: 10px 0;
+      padding: 12px 0;
       text-align: center;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 20px;
       font-weight: bold;
     }
     nav a:hover {
@@ -36,33 +37,45 @@
     }
     main {
       padding: 30px;
-      max-width: 600px;
-      margin: auto;
+      max-width: 700px;
+      margin: 30px auto;
       background: white;
-      border-radius: 12px;
+      border-radius: 14px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       flex: 1;
     }
     h2 {
       color: #00695c;
     }
-    a.github, a.back {
+    .intro {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    a.github {
       display: inline-block;
       margin-top: 15px;
-      padding: 10px 15px;
+      padding: 10px 20px;
       background-color: #004d40;
       color: white;
       text-decoration: none;
       border-radius: 6px;
     }
-    a.github:hover, a.back:hover {
+    a.github:hover {
       background-color: #00695c;
     }
-    footer {
-      background-color: #006064;
-      color: white;
+    .back {
+      display: block;
+      margin-top: 40px;
       text-align: center;
-      padding: 15px;
+    }
+    .back a {
+      color: #004d40;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .back a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -79,15 +92,19 @@
 
   <main>
     <h2>M. Aldian Nurrahman</h2>
-    <p>Saya adalah mahasiswa dari <strong>Universitas Perjuangan</strong>, kelas <strong>4F</strong>. Website ini dibuat sebagai bagian dari tugas mata kuliah Sistem Operasi dan juga sebagai portofolio online pribadi saya.</p>
-    <p>Saya menyukai pengembangan web, teknologi, dan hal-hal baru yang bisa meningkatkan kreativitas dan produktivitas. Semoga isi dari website ini dapat bermanfaat, baik bagi dosen, teman, maupun pengunjung lainnya.</p>
-    
-    <a href="https://github.com/aldiannurrahman" target="_blank" class="github">Kunjungi GitHub Saya</a><br>
-    <a href="../index.html" class="back">Kembali ke Beranda</a>
-  </main>
+    <p class="intro">
+      Halo! Saya adalah mahasiswa dari <strong>Universitas Perjuangan</strong> yang saat ini berada di kelas <strong>4F</strong>.
+      Website ini dibuat sebagai media pengumpulan tugas-tugas dari mata kuliah <em>Sistem Operasi</em>.
+      Saya tertarik pada pengembangan web, pemrograman, dan eksplorasi teknologi open-source.
+    </p>
+    <p class="intro">
+      Terima kasih telah mengunjungi halaman ini. Anda bisa melihat proyek atau kontribusi saya lainnya di GitHub melalui tautan di bawah ini.
+    </p>
+    <a href="https://github.com/aldiannurrahman" target="_blank" class="github">Kunjungi GitHub Saya</a>
 
-  <footer>
-    &copy; 2025 M. Aldian Nurrahman - Universitas Perjuangan
-  </footer>
+    <div class="back">
+      <p><a href="../index.html">&larr; Kembali ke Beranda</a></p>
+    </div>
+  </main>
 </body>
 </html>
