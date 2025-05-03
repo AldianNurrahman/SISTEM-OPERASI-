@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,9 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom right, #e0f2f1, #b2dfdb);
       color: #004d40;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
       background-color: #006064;
@@ -37,11 +41,12 @@
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex: 1;
     }
     h2 {
       color: #00695c;
     }
-    a.github {
+    a.github, a.back {
       display: inline-block;
       margin-top: 15px;
       padding: 10px 15px;
@@ -50,22 +55,39 @@
       text-decoration: none;
       border-radius: 6px;
     }
-    a.github:hover {
+    a.github:hover, a.back:hover {
       background-color: #00695c;
+    }
+    footer {
+      background-color: #006064;
+      color: white;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Tentang Saya</h1>
-  </header>  <nav>
+  </header>
+
+  <nav>
     <a href="../index.html">Beranda</a>
     <a href="../tugas/tugas1.html">Tugas 1</a>
     <a href="index.html">About Me</a>
-  </nav>  <main>
+  </nav>
+
+  <main>
     <h2>M. Aldian Nurrahman</h2>
-    <p>Saya adalah mahasiswa Universitas Perjuangan dari kelas 4F. Website ini saya buat sebagai media untuk mengumpulkan tugas-tugas dari mata kuliah Sistem Operasi.</p>
-    <a href="https://github.com/aldiannurrahman" target="_blank" class="github">Kunjungi GitHub Saya</a>
+    <p>Saya adalah mahasiswa dari <strong>Universitas Perjuangan</strong>, kelas <strong>4F</strong>. Website ini dibuat sebagai bagian dari tugas mata kuliah Sistem Operasi dan juga sebagai portofolio online pribadi saya.</p>
+    <p>Saya menyukai pengembangan web, teknologi, dan hal-hal baru yang bisa meningkatkan kreativitas dan produktivitas. Semoga isi dari website ini dapat bermanfaat, baik bagi dosen, teman, maupun pengunjung lainnya.</p>
+    
+    <a href="https://github.com/aldiannurrahman" target="_blank" class="github">Kunjungi GitHub Saya</a><br>
+    <a href="../index.html" class="back">Kembali ke Beranda</a>
   </main>
+
+  <footer>
+    &copy; 2025 M. Aldian Nurrahman - Universitas Perjuangan
+  </footer>
 </body>
 </html>
