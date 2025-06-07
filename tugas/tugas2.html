@@ -3,34 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tugas 2 - Penjadwalan Proses</title>
+  <title>Tugas 2 Penjadwalan Proses</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #e0f7fa, #80deea);
-      color: #004d40;
+      background: #f5fbfa;
+      color: #003c3c;
       margin: 0;
       padding: 0;
     }
     header, footer {
-      background-color: #006064;
+      background-color: #00695c;
       color: white;
       text-align: center;
       padding: 20px;
     }
+    /* Taskbar style */
+    nav.taskbar {
+      background-color: #004d40;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav.taskbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav.taskbar a:hover {
+      background-color: #00796b;
+    }
     main {
       padding: 20px;
     }
+    h1 {
+      margin: 0;
+    }
     h2 {
       text-align: center;
-      color: #006064;
+      color: #004d40;
     }
     section {
       background: white;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow-x: auto;
     }
     table {
@@ -44,31 +67,69 @@
       text-align: center;
     }
     th {
-      background-color: #b2ebf2;
+      background-color: #b2dfdb;
     }
-    @media (max-width: 600px) {
-      table, th, td {
-        font-size: 12px;
-      }
+    p.note {
+      font-size: 14px;
+      background: #e0f2f1;
+      padding: 10px;
+      border-left: 5px solid #00796b;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Tugas 2 - Penjadwalan Proses</h1>
-    <p>M. Aldian Nurrahman - 2303010139</p>
+    <h1>Tugas 2 Penjadwalan Proses</h1>
+    <p>PTPD, PTDP, SJF, RPTD, RR (Q=2,3,4,5)</p>
   </header>
+
+  <nav class="taskbar">
+    <a href="index.html">Beranda</a>
+    <a href="tugas/">Menuju Folder Tugas</a>
+  </nav>
 
   <main>
     <section>
-      <h2>FCFS (First Come First Serve)</h2>
+      <h2>Penjelasan Nilai X1 dan X2</h2>
+      <p class="note">
+        X1 = Selisih Maksimum (SM) = Batas Atas Prioritas - Nilai Proses <br/>
+        X2 = Selisih Rendah (SR) = Nilai Proses - Batas Bawah Prioritas
+      </p>
+      <p class="note">
+        LT = Laju Tertimbang = SR - SM <br/>
+        PTPD = Prioritas Tertimbang Proses Dinamis = TB + LT
+      </p>
+    </section>
+
+    <section>
+      <h2>PTPD (Prioritas Tertimbang Proses Dinamis)</h2>
       <table>
-        <tr><th>Proses</th><th>Kedatangan</th><th>Durasi</th><th>Mulai</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
-        <tr><td>P1</td><td>0</td><td>7</td><td>0</td><td>7</td><td>0</td><td>7</td></tr>
-        <tr><td>P2</td><td>1</td><td>5</td><td>7</td><td>12</td><td>6</td><td>11</td></tr>
-        <tr><td>P3</td><td>2</td><td>1</td><td>12</td><td>13</td><td>10</td><td>11</td></tr>
-        <tr><td>P4</td><td>3</td><td>2</td><td>13</td><td>15</td><td>10</td><td>12</td></tr>
-        <tr><td>P5</td><td>4</td><td>8</td><td>15</td><td>23</td><td>11</td><td>19</td></tr>
+        <tr><th>Proses</th><th>TB</th><th>LP</th><th>X1 (SM)</th><th>X2 (SR)</th><th>LT</th><th>PTPD</th></tr>
+        <tr><td>A</td><td>6</td><td>0</td><td>9</td><td>0</td><td>-9</td><td>6</td></tr>
+        <tr><td>B</td><td>2</td><td>3</td><td>1</td><td>1</td><td>0</td><td>2</td></tr>
+        <tr><td>C</td><td>5</td><td>7</td><td>0</td><td>7</td><td>7</td><td>12</td></tr>
+        <tr><td>D</td><td>7</td><td>3</td><td>6</td><td>2</td><td>-4</td><td>3</td></tr>
+        <tr><td>E</td><td>11</td><td>10</td><td>0</td><td>10</td><td>10</td><td>21</td></tr>
+        <tr><td>F</td><td>15</td><td>3</td><td>6</td><td>2</td><td>-4</td><td>11</td></tr>
+        <tr><td>G</td><td>18</td><td>4</td><td>0</td><td>4</td><td>4</td><td>22</td></tr>
+        <tr><th colspan="6">Total</th><th>77</th></tr>
+        <tr><th colspan="6">Rata-rata</th><th>11.00</th></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>PTDP (Prioritas Tertimbang Dinamis Proses)</h2>
+      <table>
+        <tr><th>Proses</th><th>PTPD</th><th>Urutan Eksekusi</th></tr>
+        <tr><td>G</td><td>22</td><td>1</td></tr>
+        <tr><td>E</td><td>21</td><td>2</td></tr>
+        <tr><td>C</td><td>12</td><td>3</td></tr>
+        <tr><td>F</td><td>11</td><td>4</td></tr>
+        <tr><td>A</td><td>6</td><td>5</td></tr>
+        <tr><td>D</td><td>3</td><td>6</td></tr>
+        <tr><td>B</td><td>2</td><td>7</td></tr>
+        <tr><th colspan="2">Total PTPD</th><th>77</th></tr>
+        <tr><th colspan="2">Rata-rata</th><th>11.00</th></tr>
       </table>
     </section>
 
@@ -81,18 +142,22 @@
         <tr><td>P4</td><td>3</td><td>2</td><td>8</td><td>10</td><td>5</td><td>7</td></tr>
         <tr><td>P2</td><td>1</td><td>5</td><td>10</td><td>15</td><td>9</td><td>14</td></tr>
         <tr><td>P5</td><td>4</td><td>8</td><td>15</td><td>23</td><td>11</td><td>19</td></tr>
+        <tr><th colspan="5">Total</th><th>30</th><th>53</th></tr>
+        <tr><th colspan="5">Rata-rata</th><th>6</th><th>10.6</th></tr>
       </table>
     </section>
 
     <section>
-      <h2>Penjadwalan Prioritas</h2>
+      <h2>RPTD (Response Proportional to Duration)</h2>
       <table>
-        <tr><th>Proses</th><th>Kedatangan</th><th>Durasi</th><th>Prioritas</th><th>Mulai</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
-        <tr><td>P3</td><td>2</td><td>1</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td></tr>
-        <tr><td>P5</td><td>4</td><td>8</td><td>2</td><td>4</td><td>12</td><td>0</td><td>8</td></tr>
-        <tr><td>P2</td><td>1</td><td>5</td><td>3</td><td>12</td><td>17</td><td>11</td><td>16</td></tr>
-        <tr><td>P4</td><td>3</td><td>2</td><td>4</td><td>17</td><td>19</td><td>14</td><td>16</td></tr>
-        <tr><td>P1</td><td>0</td><td>7</td><td>5</td><td>19</td><td>26</td><td>19</td><td>26</td></tr>
+        <tr><th>Proses</th><th>Durasi</th><th>Prioritas (1/Durasi)</th></tr>
+        <tr><td>P1</td><td>7</td><td>0.1429</td></tr>
+        <tr><td>P2</td><td>5</td><td>0.2</td></tr>
+        <tr><td>P3</td><td>1</td><td>1.0000</td></tr>
+        <tr><td>P4</td><td>2</td><td>0.5</td></tr>
+        <tr><td>P5</td><td>8</td><td>0.125</td></tr>
+        <tr><th>Total</th><th>23</th><th>1.9679</th></tr>
+        <tr><th>Rata-rata</th><th>4.6</th><th>0.3936</th></tr>
       </table>
     </section>
 
@@ -105,6 +170,8 @@
         <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
         <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
         <tr><td>P5</td><td>26</td><td>18</td><td>22</td></tr>
+        <tr><th>Total</th><th>-</th><th>60</th><th>79</th></tr>
+        <tr><th>Rata-rata</th><th>-</th><th>12.0</th><th>15.8</th></tr>
       </table>
     </section>
 
@@ -117,6 +184,8 @@
         <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
         <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
         <tr><td>P5</td><td>25</td><td>17</td><td>21</td></tr>
+        <tr><th>Total</th><th>-</th><th>57</th><th>76</th></tr>
+        <tr><th>Rata-rata</th><th>-</th><th>11.4</th><th>15.2</th></tr>
       </table>
     </section>
 
@@ -129,6 +198,8 @@
         <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
         <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
         <tr><td>P5</td><td>24</td><td>16</td><td>20</td></tr>
+        <tr><th>Total</th><th>-</th><th>54</th><th>73</th></tr>
+        <tr><th>Rata-rata</th><th>-</th><th>10.8</th><th>14.6</th></tr>
       </table>
     </section>
 
@@ -141,12 +212,14 @@
         <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
         <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
         <tr><td>P5</td><td>24</td><td>16</td><td>20</td></tr>
+        <tr><th>Total</th><th>-</th><th>54</th><th>73</th></tr>
+        <tr><th>Rata-rata</th><th>-</th><th>10.8</th><th>14.6</th></tr>
       </table>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 M. Aldian Nurrahman - Tugas Sistem Operasi
+    &copy; 2025 Penjadwalan Proses - Sistem Operasi
   </footer>
 </body>
 </html>
