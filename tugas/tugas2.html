@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tugas 2 - Penjadwalan Proses</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+      color: #004d40;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #006064;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    main {
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #006064;
+    }
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #b2ebf2;
+    }
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tugas 2 - Penjadwalan Proses</h1>
+    <p>M. Aldian Nurrahman - 2303010139</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>FCFS (First Come First Serve)</h2>
+      <table>
+        <tr><th>Proses</th><th>Kedatangan</th><th>Durasi</th><th>Mulai</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
+        <tr><td>P1</td><td>0</td><td>7</td><td>0</td><td>7</td><td>0</td><td>7</td></tr>
+        <tr><td>P2</td><td>1</td><td>5</td><td>7</td><td>12</td><td>6</td><td>11</td></tr>
+        <tr><td>P3</td><td>2</td><td>1</td><td>12</td><td>13</td><td>10</td><td>11</td></tr>
+        <tr><td>P4</td><td>3</td><td>2</td><td>13</td><td>15</td><td>10</td><td>12</td></tr>
+        <tr><td>P5</td><td>4</td><td>8</td><td>15</td><td>23</td><td>11</td><td>19</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>SJF (Shortest Job First)</h2>
+      <table>
+        <tr><th>Proses</th><th>Kedatangan</th><th>Durasi</th><th>Mulai</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
+        <tr><td>P1</td><td>0</td><td>7</td><td>0</td><td>7</td><td>0</td><td>7</td></tr>
+        <tr><td>P3</td><td>2</td><td>1</td><td>7</td><td>8</td><td>5</td><td>6</td></tr>
+        <tr><td>P4</td><td>3</td><td>2</td><td>8</td><td>10</td><td>5</td><td>7</td></tr>
+        <tr><td>P2</td><td>1</td><td>5</td><td>10</td><td>15</td><td>9</td><td>14</td></tr>
+        <tr><td>P5</td><td>4</td><td>8</td><td>15</td><td>23</td><td>11</td><td>19</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Penjadwalan Prioritas</h2>
+      <table>
+        <tr><th>Proses</th><th>Kedatangan</th><th>Durasi</th><th>Prioritas</th><th>Mulai</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
+        <tr><td>P3</td><td>2</td><td>1</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td></tr>
+        <tr><td>P5</td><td>4</td><td>8</td><td>2</td><td>4</td><td>12</td><td>0</td><td>8</td></tr>
+        <tr><td>P2</td><td>1</td><td>5</td><td>3</td><td>12</td><td>17</td><td>11</td><td>16</td></tr>
+        <tr><td>P4</td><td>3</td><td>2</td><td>4</td><td>17</td><td>19</td><td>14</td><td>16</td></tr>
+        <tr><td>P1</td><td>0</td><td>7</td><td>5</td><td>19</td><td>26</td><td>19</td><td>26</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Round Robin (Quantum = 2)</h2>
+      <table>
+        <tr><th>Proses</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
+        <tr><td>P1</td><td>23</td><td>16</td><td>23</td></tr>
+        <tr><td>P2</td><td>19</td><td>13</td><td>18</td></tr>
+        <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
+        <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
+        <tr><td>P5</td><td>26</td><td>18</td><td>22</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Round Robin (Quantum = 3)</h2>
+      <table>
+        <tr><th>Proses</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
+        <tr><td>P1</td><td>22</td><td>15</td><td>22</td></tr>
+        <tr><td>P2</td><td>18</td><td>12</td><td>17</td></tr>
+        <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
+        <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
+        <tr><td>P5</td><td>25</td><td>17</td><td>21</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Round Robin (Quantum = 4)</h2>
+      <table>
+        <tr><th>Proses</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
+        <tr><td>P1</td><td>21</td><td>14</td><td>21</td></tr>
+        <tr><td>P2</td><td>17</td><td>11</td><td>16</td></tr>
+        <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
+        <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
+        <tr><td>P5</td><td>24</td><td>16</td><td>20</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Round Robin (Quantum = 5)</h2>
+      <table>
+        <tr><th>Proses</th><th>Selesai</th><th>Waktu Tunggu</th><th>Waktu Penyelesaian</th></tr>
+        <tr><td>P1</td><td>21</td><td>14</td><td>21</td></tr>
+        <tr><td>P2</td><td>17</td><td>11</td><td>16</td></tr>
+        <tr><td>P3</td><td>8</td><td>5</td><td>6</td></tr>
+        <tr><td>P4</td><td>13</td><td>8</td><td>10</td></tr>
+        <tr><td>P5</td><td>24</td><td>16</td><td>20</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 M. Aldian Nurrahman - Tugas Sistem Operasi
+  </footer>
+</body>
+</html>
